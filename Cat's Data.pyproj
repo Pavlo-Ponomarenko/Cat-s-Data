@@ -40,9 +40,7 @@
     <Folder Include="Cat_s_Data\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cat_s_Data\data.pkl">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="Cat_s_Data\data.pkl" />
     <Content Include="requirements.txt" />
     <Content Include="Cat_s_Data\static\content\bootstrap.css" />
     <Content Include="Cat_s_Data\static\content\bootstrap.min.css" />

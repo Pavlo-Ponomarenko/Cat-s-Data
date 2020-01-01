@@ -25,9 +25,10 @@
         </div>
     </div>
     <form action="" method="post">
-        <input type="text" name="Input_id">
+        <input type="text" name="Input_id" value={{id_into}}>
         <textarea name="TextArea">{{x}}</textarea>
         <input type="submit" formaction="/data_rec" value="Найти">
+        <input type="submit" formaction="/data_add" value="Сохранить">
     </form>
 
     <h1>{{message}}</h1>
