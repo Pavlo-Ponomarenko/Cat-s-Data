@@ -11,6 +11,10 @@
         body {
             background-color: greenyellow
         }
+        h1 {
+            font-size: large;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -23,9 +27,10 @@
     <form action="" method="post">
         <input type="text" name="Input_id">
         <textarea name="TextArea">{{x}}</textarea>
-        <input type="submit" formaction="/data_rec" value="Зарегистрировать">
+        <input type="submit" formaction="/data_rec" value="Найти">
     </form>
 
+    <h1>{{message}}</h1>
 
     {% block scripts %}{% endblock %}
 
