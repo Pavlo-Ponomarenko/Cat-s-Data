@@ -37,3 +37,18 @@ def data_adding():
         return ('', 204)
     else:
         return render_template('index.html', title='Cat\'s Data', message="Не корректное id")
+
+@app.route('/data_del', methods=['POST'])
+def data_del():
+    file = open('data.pkl', 'rb')
+    data = pickle.load(file)
+    file.close()
+    our_request = request.form['Input_id'].strip()
+    if our_request in data:
+        del data[our_request]
+        file = open('data.pkl', 'wb')
+        pickle.dump(data, file)
+        file.close()
+        return render_template('index.html', title='Cat\'s Data', message="Запись удалена")
+    else:
+        return render_template('index.html', title='Cat\'s Data', message="Не корректное id")
