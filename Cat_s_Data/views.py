@@ -21,7 +21,7 @@ def data_getting():
     our_request = request.form['Input_id'].strip()
     if our_request in data:
         return render_template('index.html', title='Cat\'s Data', x=data[our_request], id_into=our_request)
-    return render_template('index.html', title='Cat\'s Data', message="Данных не обнаружено")
+    return render_template('index.html', title='Cat\'s Data', message="Данных не обнаружено", id_into=our_request)
 
 @app.route('/data_add', methods=['POST'])
 def data_adding():
