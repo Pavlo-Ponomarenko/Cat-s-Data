@@ -24,12 +24,12 @@
             <font size="5" href="/" class="navbar-fixed-top" style="color: gold; position: absolute; left:24px">Cat's data</font>
         </div>
     </div>
-    <form action="" method="post">
+    <form>
         <input type="text" name="Input_id" value={{id_into}}>
         <textarea name="TextArea">{{x}}</textarea>
-        <input type="submit" formaction="/data_rec" value="Найти">
-        <input type="submit" formaction="/data_add" value="Сохранить">
-        <input type="submit" formaction="/data_del" value="Удалить" />
+        <input type="submit" formmethod="get" formaction="/data_f" value="Найти">
+        <input type="submit" formmethod="post" formaction="/data" value="Сохранить">
+        <input type="submit" formmethod="get" formaction="/data_d" value="Удалить" />
     </form>
 
     <h1>{{message}}</h1>

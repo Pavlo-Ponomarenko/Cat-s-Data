@@ -13,17 +13,17 @@ def home():
         'index.html',
         title='Cat\'s Data')
 
-@app.route('/data_rec', methods=['POST'])
+@app.route('/data_f', methods=['GET'])
 def data_getting():
     file = open('data.pkl', 'rb')
     data = pickle.load(file)
     file.close()
-    our_request = request.form['Input_id'].strip()
+    our_request = request.args['Input_id'].strip()
     if our_request in data:
         return render_template('index.html', title='Cat\'s Data', x=data[our_request], id_into=our_request)
     return render_template('index.html', title='Cat\'s Data', message="Данных не обнаружено", id_into=our_request)
 
-@app.route('/data_add', methods=['POST'])
+@app.route('/data', methods=['POST'])
 def data_adding():
     file = open('data.pkl', 'rb')
     data = pickle.load(file)
@@ -38,12 +38,12 @@ def data_adding():
     else:
         return render_template('index.html', title='Cat\'s Data', message="Не корректное id")
 
-@app.route('/data_del', methods=['POST'])
+@app.route('/data_d', methods=['GET'])
 def data_del():
     file = open('data.pkl', 'rb')
     data = pickle.load(file)
     file.close()
-    our_request = request.form['Input_id'].strip()
+    our_request = request.args['Input_id'].strip()
     if our_request in data:
         del data[our_request]
         file = open('data.pkl', 'wb')
