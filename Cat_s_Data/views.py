@@ -20,7 +20,14 @@ def data_getting():
     file.close()
     our_request = request.args['Input_id'].strip()
     if our_request in data:
-        return render_template('index.html', title='Cat\'s Data', x=data[our_request], id_into=our_request)
+        return render_template('index.html', title='Cat\'s Data',
+                               id_into=our_request,
+                               name=data[our_request][0],
+                               gender=data[our_request][1],
+                               age=data[our_request][2],
+                               breed=data[our_request][3],
+                               color=data[our_request][4],
+                               toy=data[our_request][5])
     return render_template('index.html', title='Cat\'s Data', message="Данных не обнаружено", id_into=our_request)
 
 @app.route('/data', methods=['POST'])
@@ -30,7 +37,13 @@ def data_adding():
     file.close()
     our_request = request.form['Input_id']
     if our_request != "" and not (' ' in list(our_request.strip())):
-        data[our_request] = request.form["TextArea"]
+        req_list = [request.form["Name"],
+                    request.form["Gender"],
+                    request.form["Age"],
+                    request.form["Breed"],
+                    request.form["Color"],
+                    request.form["Toy"]]
+        data[our_request] = req_list
         file = open('data.pkl', 'wb')
         pickle.dump(data, file)
         file.close()

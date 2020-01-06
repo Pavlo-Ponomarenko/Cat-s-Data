@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - Cat's Data</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
@@ -11,9 +11,24 @@
         body {
             background-color: greenyellow
         }
+
         h1 {
             font-size: large;
             font-weight: 600;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: large;
+            font-weight: 600;
+            text-align: center;
+            color: red;
+        }
+
+        form {
+            margin: 20px auto;
+            margin-top: 45px;
+            width: 374px;
         }
     </style>
 </head>
@@ -21,18 +36,24 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: forestgreen">
         <div class="navbar-fixed-top">
-            <font size="5" href="/" class="navbar-fixed-top" style="color: gold; position: absolute; left:24px">Cat's data</font>
+            <font size="5" href="/" class="navbar-fixed-top" style="color: gold; position: absolute; left:24px; top:10px">Cat's data</font>
         </div>
     </div>
     <form>
-        <input type="text" name="Input_id" value={{id_into}}>
-        <textarea name="TextArea">{{x}}</textarea>
+        <input type="text" name="Input_id" size="16" placeholder="id" value={{id_into}}>
         <input type="submit" formmethod="get" formaction="/data_f" value="Найти">
         <input type="submit" formmethod="post" formaction="/data" value="Сохранить">
         <input type="submit" formmethod="get" formaction="/data_d" value="Удалить" />
+        <h1>Параметры вашего питомца</h1>
+        <input type="text" name="Name" size="21" placeholder="Имя" value={{name}}>
+        <input type="text" name="Gender" size="21" placeholder="Пол" value={{gender}}>
+        <input type="text" name="Age" size="21" placeholder="Возраст" value={{age}}>
+        <input type="text" name="Breed" size="21" placeholder="Порода" value={{breed}}>
+        <input type="text" name="Color" size="21" placeholder="Цвет" value={{color}}>
+        <input type="text" name="Toy" size="21" placeholder="Любимая игрушка" value={{toy}}>
     </form>
 
-    <h1>{{message}}</h1>
+    <h2 style:"color:red;">{{message}}</h2>
 
     {% block scripts %}{% endblock %}
 
