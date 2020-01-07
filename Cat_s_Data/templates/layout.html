@@ -9,7 +9,7 @@
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
     <style>
         body {
-            background-color: greenyellow
+            background-color: gainsboro
         }
 
         h1 {
@@ -30,15 +30,44 @@
             margin-top: 45px;
             width: 374px;
         }
+        table {
+            position: absolute;
+        }
+        img {
+            height: 200px;
+            width: 195px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: forestgreen">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkslategrey">
         <div class="navbar-fixed-top">
-            <font size="5" href="/" class="navbar-fixed-top" style="color: gold; position: absolute; left:24px; top:10px">Cat's data</font>
+            <font size="5" href="/" class="navbar-fixed-top" style="color: honeydew; position: absolute; left:24px; top:10px">Cat's data</font>
         </div>
     </div>
+    <table>
+        <tr>
+            <td><img src="https://www.images.lesyadraw.ru/2013/08/kak_narisovat_kota_karandashom_poetapno13.jpg" /></td>
+        </tr>
+        <tr>
+            <td><img src="http://redcat7.ru/wp-content/uploads/2015/02/cat_pencil_drawing_by_mintimelon-d5x2gcf.jpg" /></td>
+        </tr>
+        <tr>
+            <td><img src="https://happypik.ru/wp-content/uploads/2019/09/karandashom28.png" /></td>
+        </tr>
+    </table>
+    <table style="margin-left:1190px">
+        <tr>
+            <td><img src="https://purmix.ru/images/uroki/karand/givotnie/kak-narisovat-koshku-porody-mejn-kunm-karandashom-pojetapno_mini.jpg" /></td>
+        </tr>
+        <tr>
+            <td><img src="http://flatonika.ru/wp-content/uploads/2014/03/3-risunok-kota.jpg" /></td>
+        </tr>
+        <tr>
+            <td><img src="https://i.pinimg.com/originals/8e/23/d4/8e23d494dedd24d11cf3748a03947993.jpg" /></td>
+        </tr>
+    </table>
     <form>
         <input type="text" name="Input_id" size="16" placeholder="id" value={{id_into}}>
         <input type="submit" formmethod="get" formaction="/data_f" value="Найти">
@@ -54,6 +83,8 @@
     </form>
 
     <h2 style:"color:red;">{{message}}</h2>
+
+    <img style="margin-left: 520px; width: 320px; height: 250px" src="http://img.bibo.kz/7202/7202156.JPG" />
 
     {% block scripts %}{% endblock %}
 
